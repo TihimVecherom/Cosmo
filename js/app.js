@@ -3712,17 +3712,20 @@
     da.init();
     const menuBurger = document.querySelector(".burger-menu__icon");
     const menuBody = document.querySelector(".burger-menu ");
-    const mainBody = document.querySelector(".page");
+    const mainBody = document.querySelector(".wrapper");
+    const bodyBody = document.querySelector("body");
     if (menuBurger) menuBurger.addEventListener("click", (function(e) {
         menuBurger.classList.toggle("_burger-active");
         if (menuBody) menuBody.classList.toggle("_active");
         if (mainBody) mainBody.classList.toggle("_active-bg");
+        if (bodyBody) bodyBody.classList.toggle("_hidden");
     }));
     const buttonClose = document.querySelector(".button-close");
     if (buttonClose) buttonClose.addEventListener("click", (function(e) {
         buttonClose.classList.remove("_burger-active");
         if (menuBody) menuBody.classList.remove("_active");
         if (mainBody) mainBody.classList.remove("_active-bg");
+        if (bodyBody) bodyBody.classList.remove("_hidden");
     }));
     window["FLS"] = true;
     isWebp();

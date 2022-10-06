@@ -118,7 +118,7 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 .wrapper > main {
@@ -1540,6 +1540,13 @@ h6 {
   margin-top: 10px;
 }
 
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+
 .header {
   position: relative;
 }
@@ -1590,6 +1597,12 @@ h6 {
   }
 }
 
+.top-header__link {
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
 .top-header__button {
   display: block;
   -webkit-transition: 0.2s;
@@ -1600,6 +1613,10 @@ h6 {
   padding: 8px 16px;
   border: 2px solid #DDDDDD;
   border-radius: 19px;
+}
+
+.top-header__link:hover {
+  color: #FEDD11;
 }
 
 .top-header__button:hover {
@@ -1730,18 +1747,6 @@ h6 {
 @supports not (gap: clamp( 0.625rem , -0.2083333333rem  +  1.7361111111vw , 1.875rem )) {
   .body-header__list {
     gap: calc(0.625rem + 1.25 * (100vw - 48rem) / 72);
-  }
-}
-
-@supports (font-size: clamp( 0.75rem , 0.5833333333rem  +  0.3472222222vw , 1rem )) {
-  .body-header__list {
-    font-size: clamp( 0.75rem , 0.5833333333rem  +  0.3472222222vw , 1rem );
-  }
-}
-
-@supports not (font-size: clamp( 0.75rem , 0.5833333333rem  +  0.3472222222vw , 1rem )) {
-  .body-header__list {
-    font-size: calc(0.75rem + 0.25 * (100vw - 48rem) / 72);
   }
 }
 
@@ -1906,6 +1911,10 @@ h6 {
   display: none;
 }
 
+._hidden {
+  overflow: hidden;
+}
+
 ._active {
   right: 0 !important;
 }
@@ -1965,10 +1974,10 @@ h6 {
 
 .button-close {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background: url("../img/header/close.svg") center center no-repeat;
-  background-size: 20px 20px;
+  background-size: 30px 30px;
   top: 20px;
   right: 20px;
 }
@@ -2009,6 +2018,9 @@ h6 {
 }
 
 .footer__link {
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
   font-weight: 300;
   font-size: 14;
 }
@@ -2025,6 +2037,10 @@ h6 {
 .footer__logo-ibg {
   width: 104px;
   height: 82px;
+}
+
+.footer__link:hover {
+  color: #FEDD11;
 }
 
 .footer__logo-ibg a {
@@ -2225,6 +2241,7 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    gap: 20px;
   }
 
   .first__swiper {
@@ -2236,7 +2253,7 @@ h6 {
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
-    min-height: 270px;
+    min-height: 300px;
   }
 
   .banner {
@@ -2619,14 +2636,6 @@ h6 {
 
   .burger-menu {
     width: 80%;
-  }
-
-  .burger-menu__list .top-header__item {
-    font-size: 14px;
-  }
-
-  .burger-menu__list .body-header__item {
-    font-size: 14px;
   }
 
   .menu-catalog {
